@@ -1,0 +1,159 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#fondo {
+    background-image: url("/seccion1/file.svg");
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: contain;
+    height: 90vh;
+    width: 100%;
+    padding-top: 55%;
+}
+
+#img1 {
+    height: 10vh;
+    width: 90%;
+}
+
+
+#text1 {
+    color: white;
+    font-size: large;
+}
+
+#lista1 {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: start;
+    justify-content: center;
+    height: 45vh;
+    width: 100%;
+    background: #000000;
+}
+
+#lista1 li {
+    padding-top: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+#btn1 {
+    transform: skewX(-15deg);
+    transition: transform 0.3s ease;
+    background-color: #CA2020;
+    width: 20vh;
+    height: 40px;
+    color: white;
+    font-weight: bold;
+}
+
+#btn1:hover {
+    background-color: #fc1d1d;
+}
+
+#posicion {
+    display: none;
+}
+
+#redes {
+    display: flex;
+    justify-content: flex-end;
+    gap: 45px;
+    border-bottom: #caced6 solid 1px;
+    margin-top: 20px;
+    margin-left: 30px;
+    margin-right: 20px;
+}
+
+#redes i {
+    color: #caced6;
+    height:50vh;
+    width: 50vh;
+}
+
+#redes i:hover {
+    color: #000000;
+}
+
+#redes h1 {
+    color: #caced6;
+    cursor: pointer;
+    font-weight: bolder;
+    font-size: large;
+}
+
+#redes h1:hover {
+    color: #000000;
+}
+
+@media screen and (min-width:1024px) {
+
+    #fondo {
+        background-position: center;
+        background-size: cover;
+        height: 100vh;
+        width: 100%;
+        padding-top: 5%;
+    }
+
+    #img1 {
+        height: 20vh;
+        width: 100%;
+    }
+
+    #text1 {
+        color: white;
+        font-size: larger;
+        width: 130vh;
+    }
+
+    #lista1 {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        align-items: start;
+        justify-content: center;
+        height: 45vh;
+        width: 100%;
+        background: transparent;
+    }
+
+    #lista1 li {
+        padding-top: 10px;
+        margin-left: 20px;
+        margin-right: 25px;
+    }
+
+    #posicion {
+        display: block;
+    }
+
+    #lista2 {
+        display: flex;
+        margin-left: 5%;
+        background-color: #ffffff;
+        align-items: center;
+        justify-content: center;
+        width: 130vh;
+        height: 12vh;
+        position: absolute;
+        top: 105vh;
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+    #lista2 li:hover {
+        color: #fc1d1d;
+        border-top: 2px solid #fc1d1d;
+    }
+
+    #redes{
+        margin-top: 52vh;
+        height: 10vh;
+    }
+}

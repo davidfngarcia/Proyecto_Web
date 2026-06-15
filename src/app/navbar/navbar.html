@@ -1,0 +1,25 @@
+<header>
+    <nav>
+        <h1>
+            <img src="/Menú/Marvel_Logo.svg" alt="logotipo">
+        </h1>
+
+        <ul class="nav-links" id="nav-links" [ngClass]="{'show' : menuAbierto}"> 
+            <li><a href="#">New</a></li>
+            <li><a href="#">Comics</a></li>
+            <li><a href="#">Characters</a></li>
+            <li><a href="#">Games</a></li>
+            <li><a href="#">Movies</a></li>
+            <li><a href="#">TV Shows</a></li>
+            <li><a href="#">Videos</a></li>
+            <li><a href="#">More</a></li>
+            <li><a href="#"><button id="btn">Register Now</button></a></li>
+        </ul>
+
+        <div class="hamburguer" id="hamburguer" (click)="toggleMenu()">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+    </nav>
+</header>

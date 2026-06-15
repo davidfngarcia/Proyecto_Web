@@ -1,0 +1,9 @@
+<section class="bg-[#000000] mt-90 text-blue-800">
+    <div class="bg-amber-900 text-red-700">
+        <ul *ngFor="let seleccion of personajes" >
+            <li> {{ seleccion.id }}</li>
+            <li> {{ seleccion.name}} </li>
+            <img [src]="seleccion.image">
+        </ul>
+    </div>
+</section>

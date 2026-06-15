@@ -1,0 +1,189 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+#contenedor1{
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+
+#izquierda{
+    background: #000000;
+    display: flex;
+    align-items: center;
+    clip-path: polygon(0 0, 100% 0, 100% 95%, 0 100%);
+    padding: 30px;
+}
+
+
+#lista{
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+
+#btn1 {
+    background-color: #CA2020;
+    width: 60%;
+    height: 40px;
+    transform: skewX(-12deg);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+#btn1:hover {
+    background-color: #FF0000;
+    cursor: pointer;
+    transform: skewX(-15deg) scale(1.05);
+}
+
+#text1{
+    font-weight: 700;
+    font-size: 1.5rem;
+}
+
+#text2{
+    font-weight: 900;
+    font-size: 2.0rem;
+}
+
+#text3{
+    font-weight: 600;
+    font-size: 1.2rem;
+}
+
+.card{
+    display: none;
+}
+
+#carrusel img {
+    width: 90%;
+    display: block;
+    margin-left: 10px;
+}
+
+#carrusel a{
+    text-align: center;
+}
+
+#carrusel {
+    font-weight: 500;
+    display: flex;
+    margin-top: 40px;
+}
+
+#carrusel a:hover {
+    color: #E62429;
+}
+
+@media screen and (min-width:1024px) {
+    #seccion-principal {
+        margin-top: 115px;
+        position: relative;
+        width: 100%;
+        height: 90vh;
+        margin-bottom: 120px;
+    }
+
+    #contenedor1 {
+        display: flex;
+        width: 100%;
+        height: 500px;
+        overflow: hidden;
+        flex-direction: row;
+    }
+
+    #izquierda {
+        flex: 1.1;
+        background: #000000;
+        clip-path: polygon(0 0, 85% 0, 100% 100%, 0 100%);
+        display: flex;
+        align-items: center;
+        padding: 60px;
+        margin-right: -10%;
+        z-index: 2;
+    }
+
+
+    #lista {
+        color: #fff;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+
+    }
+
+    #text1 {
+        font-weight: 500;
+    }
+
+    
+    #text2 {
+        font-size: xx-large;
+        font-weight: 700;
+    }
+
+    #btn1 {
+        background-color: #CA2020;
+        width: 40%;
+        height: 40px;
+        transform: skewX(-12deg);
+        transition: transform 0.3s ease, background-color 0.3s ease;
+    }
+
+    #btn1:hover {
+        background-color: #FF0000;
+        cursor: pointer;
+        transform: skewX(-15deg) scale(1.05);
+    }
+
+    #derecha {
+        height: 100%;
+        flex: 0.9;
+        z-index: 1;
+    }
+
+    #derecha img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    #carrusel {
+        position: absolute;
+        top: 75%;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 90%;
+        padding: 20px;
+        display: flex;
+        gap: 15px;
+        justify-content: space-between;
+        z-index: 3;
+        background: #fff;
+    }
+
+    #carrusel img {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+
+    #carrusel {
+        font-weight: 500;
+    }
+
+    #carrusel a:hover {
+        color: #E62429;
+    }
+
+    .card{
+        display: block;
+    }
+}
