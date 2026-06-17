@@ -1,0 +1,10 @@
+{
+  "/api-brawl": {
+    "target": "https://api.brawlstars.com",
+    "secure": true,
+    "changeOrigin": true,
+    "pathRewrite": {
+      "^/api-brawl": ""
+    }
+  }
+}

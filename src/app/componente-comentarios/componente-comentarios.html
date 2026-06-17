@@ -1,0 +1,20 @@
+<section>
+    <h1 class="text-center">Comentarios</h1>
+
+    <div class="flex justify-center gap-10">
+        <ul *ngFor="let seccion of comentarios ; let i = index" class="bg-[#ebebeb] w-72 h-28 rounded-lg">
+
+            <li class="text-center font-bold text-xl">
+                <h1>{{usuarios[i]?.firstName}} {{usuarios[i]?.maidenName}} {{seccion.likes}}</h1>
+            </li>
+
+            <li class="text-center font-medium text-lg">
+                <h2>{{usuarios[i]?.address?.country}}</h2>
+            </li>
+
+            <li class="text-center font-medium text-lg">
+                <p>{{seccion.body}}</p>
+            </li>
+        </ul>
+    </div>
+</section>
