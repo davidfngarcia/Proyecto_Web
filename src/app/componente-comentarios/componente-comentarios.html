@@ -1,20 +1,42 @@
 <section>
-    <h1 class="text-center">Comentarios</h1>
+    <h1 class="text-center text-4xl font-bold mt-5">Comentarios</h1>
 
-    <div class="flex justify-center gap-10">
-        <ul *ngFor="let seccion of comentarios ; let i = index" class="bg-[#ebebeb] w-72 h-28 rounded-lg">
+    <!-- Contenedor con posición relativa -->
+    <div class="relative">
 
-            <li class="text-center font-bold text-xl">
-                <h1>{{usuarios[i]?.firstName}} {{usuarios[i]?.maidenName}} {{seccion.likes}}</h1>
-            </li>
+        <!-- Botones flotando encima -->
+        <div class="absolute lg:top-36 md:top-60  left-0 w-full flex justify-between px-4 z-10">
+            <button (click)="anterior()" [disabled]="pagina === 0" class="bg-[#E62429] rounded-full p-2 shadow-md text-white">
+                <i class="bi bi-arrow-left"></i>
+            </button>
+            <button (click)="siguiente()" class="bg-[#E62429] rounded-full p-2 shadow-md text-white">
+                <i class="bi bi-arrow-right"></i>
+            </button>
+        </div>
 
-            <li class="text-center font-medium text-lg">
-                <h2>{{usuarios[i]?.address?.country}}</h2>
-            </li>
+        <!-- Tarjetas -->
+        <div class="lg:flex lg:justify-center lg:flex-row lg:gap-2 lg:h-72 items-center 
+                md:grid md:grid-cols-2 md:gap-5 md:place-items-center 
+                flex flex-col gap-5 pt-10">
 
-            <li class="text-center font-medium text-lg">
-                <p>{{seccion.body}}</p>
-            </li>
-        </ul>
+            <ul *ngFor="let seccion of comentarios; let i = index"
+                class="bg-[#ebebeb] w-80 h-52 rounded-lg flex flex-col gap-8">
+
+                <li class="text-center font-bold text-xl flex items-center justify-center gap-5">
+                    <img [src]="usuarios[i]?.image" class="w-10">
+                    <h1>{{usuarios[i]?.firstName}} {{usuarios[i]?.maidenName}} {{seccion.likes}}</h1>
+                </li>
+
+                <li class="text-center font-medium text-lg">
+                    <h2>{{usuarios[i]?.address?.country}}</h2>
+                </li>
+
+                <li class="text-center font-medium text-lg">
+                    <p>{{seccion.body}}</p>
+                </li>
+
+            </ul>
+        </div>
+
     </div>
 </section>
