@@ -1,36 +1,53 @@
-<section>
-    <h1 class="text-center text-4xl font-bold mt-5">Comentarios</h1>
+<section> <!-- Muestra tarjetas de comentarios paginadas desde dummyjson.com -->
+    <h1 class="text-center text-4xl font-bold mt-5">Comentarios</h1>  <!-- Título de la sección -->
 
-    <!-- Contenedor con posición relativa -->
+    <!-- Contenedor con position relative para anclar los botones flotantes -->
     <div class="relative">
 
-        <!-- Botones flotando encima -->
+        <!-- ===== BOTONES DE PAGINACIÓN FLOTANTES ===== -->
+        <!-- Flotan encima de las tarjetas, uno a cada lado -->
         <div class="absolute lg:top-36 md:top-60  left-0 w-full flex justify-between px-4 z-10">
+
+            <!-- Botón anterior: se deshabilita automáticamente en la página 0 -->
             <button (click)="anterior()" [disabled]="pagina === 0" class="bg-[#E62429] rounded-full p-2 shadow-md text-white">
                 <i class="bi bi-arrow-left"></i>
             </button>
+
+            <!-- Botón siguiente: avanza a la próxima página -->
             <button (click)="siguiente()" class="bg-[#E62429] rounded-full p-2 shadow-md text-white">
                 <i class="bi bi-arrow-right"></i>
             </button>
+
         </div>
 
-        <!-- Tarjetas -->
+        <!-- ===== GRID DE TARJETAS ===== -->
+        <!-- Responsive: columna en móvil, 2 cols en tablet, fila en desktop -->
         <div class="lg:flex lg:justify-center lg:flex-row lg:gap-2 lg:h-72 items-center 
                 md:grid md:grid-cols-2 md:gap-5 md:place-items-center 
                 flex flex-col gap-5 pt-10">
 
+            <!-- *ngFor genera una tarjeta por cada comentario -->
+            <!-- 'let i = index' guarda el índice para acceder al usuario -->
             <ul *ngFor="let seccion of comentarios; let i = index"
                 class="bg-[#ebebeb] w-80 h-52 rounded-lg flex flex-col gap-8">
 
+                <!-- Encabezado de la tarjeta: foto, nombre y likes -->
+                <!-- '?.' (optional chaining) evita errores si el usuario aún no cargó -->
                 <li class="text-center font-bold text-xl flex items-center justify-center gap-5">
+                    <!-- Foto del usuario (cargada dinámicamente desde la API) -->
                     <img [src]="usuarios[i]?.image" class="w-10">
+
+                    <!-- Nombre completo del usuario y cantidad de likes -->
                     <h1>{{usuarios[i]?.firstName}} {{usuarios[i]?.maidenName}} {{seccion.likes}}</h1>
                 </li>
 
+                <!-- País del usuario -->
+                <!-- Doble '?.' porque accede a una propiedad anidada (address.country) -->
                 <li class="text-center font-medium text-lg">
                     <h2>{{usuarios[i]?.address?.country}}</h2>
                 </li>
 
+                <!-- Cuerpo del comentario -->
                 <li class="text-center font-medium text-lg">
                     <p>{{seccion.body}}</p>
                 </li>

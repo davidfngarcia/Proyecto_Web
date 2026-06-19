@@ -1,4 +1,4 @@
-*{
+*{ /* Reset global: elimina márgenes y paddings por defecto del navegador */
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -8,7 +8,7 @@ header{
     background-color: #000000;
     color:white;
     padding: 15px 10px;
-    position: relative;
+    position: relative; /* Necesario para posicionar el menú desplegable */
 }
 
 nav{
@@ -28,8 +28,8 @@ h1{
     font-family: Arial, Helvetica, sans-serif;
     cursor: pointer;
 }
-
-.nav-links{
+ 
+.nav-links{ /* Lista de enlaces: fila horizontal sin puntos */
     list-style: none;
     display: flex;
     gap: 15px;
@@ -46,7 +46,7 @@ h1{
     color: #fc0303;
 }
 
-
+/* Botón Register Now */
 #btn{
     background-color: #000080;
     color: white;
@@ -65,12 +65,14 @@ h1{
     background-color: #0000FF;
 }
 
+/* Hamburguesa: oculta por defecto en desktop */
 .hamburguer{
     display: none;
     flex-direction: column;
     cursor: pointer;
 }
 
+/* Cada línea del ícono hamburguesa */
 .bar{
     width: 25px;
     height: 3px;
@@ -79,37 +81,47 @@ h1{
     transition: 0.3s;
 }
 
+
+/* ===== RESPONSIVE: pantallas menores a 868px ===== */
 @media (max-width: 868px){
+
+    /* Separa logo y hamburguesa a los extremos */
     nav{
         justify-content: space-between;
     }
 
+
+     /* Menú oculto por defecto en móvil */
     .nav-links{
         display: none;
-        position: absolute;
-        top: 100%;
+        position: absolute; /* Se posiciona respecto al header */
+        top: 100%;   /* Aparece justo debajo del header */
         right: 0;
         background-color: #f7f7f7;
         width: 100%;
-        flex-direction: column;
+        flex-direction: column; /* Links en columna */
         text-align: center;
     }
 
+    /* Logo con margen izquierdo en móvil */
     h1{
         margin-left: 25px;
     }
 
+    /* Separación entre links en móvil */
     .nav-links li{
         margin: 15px 0px;
     }
 
+    /* Muestra el ícono hamburguesa */
     .hamburguer{
         display: flex;
         margin-right: 25px;
     }
 
+    /* Cuando Angular agrega la clase 'show', el menú se despliega */
     .nav-links.show{
         display: flex;
-        background-color: #000000;
+        background-color: #000000; /* Fondo negro al abrirse */
     }
 }

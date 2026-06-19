@@ -4,16 +4,20 @@
     box-sizing: border-box;
 }
 
+
+/* Contenedor principal con imagen de fondo SVG */
 #fondo {
     background-image: url("/seccion1/file.svg");
-    background-repeat: no-repeat;
-    background-position: top;
-    background-size: contain;
+    background-repeat: no-repeat; /* No repite la imagen */
+    background-position: top; /* La imagen se alinea arriba */
+    background-size: contain;   /* Imagen completa sin recortar */
     height: 90vh;
     width: 100%;
-    padding-top: 55%;
+    padding-top: 55%; /* Empuja el contenido debajo de la imagen */
 }
 
+
+/* Logo de la sección */
 #img1 {
     height: 10vh;
     width: 90%;
@@ -25,9 +29,10 @@
     font-size: large;
 }
 
+/* Lista principal: columna flex con fondo negro en móvil */
 #lista1 {
     display: flex;
-    flex-direction: column;
+    flex-direction: column;  /* Apila logo, texto y botón verticalmente */
     gap: 10px;
     align-items: start;
     justify-content: center;
@@ -36,7 +41,7 @@
     background: #000000;
 }
 
-#lista1 li {
+#lista1 li { /* Espaciado interno de cada ítem de la lista */
     padding-top: 10px;
     margin-left: 10px;
     margin-right: 10px;
@@ -44,8 +49,8 @@
 
 #btn1 {
     transform: skewX(-15deg);
-    transition: transform 0.3s ease;
-    background-color: #CA2020;
+    transition: transform 0.3s ease; /* Animación suave al hacer hover */
+    background-color: #CA2020; 
     width: 20vh;
     height: 40px;
     color: white;
@@ -56,15 +61,17 @@
     background-color: #fc1d1d;
 }
 
+/* Barra secundaria: oculta en móvil */
 #posicion {
     display: none;
 }
 
+/* Redes sociales: fila horizontal alineada a la derecha */
 #redes {
-    display: flex;
-    justify-content: flex-end;
+    display: flex; 
+    justify-content: flex-end; /* Alinea todo a la derecha */
     gap: 45px;
-    border-bottom: #caced6 solid 1px;
+    border-bottom: #caced6 solid 1px; /* Línea separadora debajo */
     margin-top: 20px;
     margin-left: 30px;
     margin-right: 20px;
@@ -80,6 +87,7 @@
     color: #000000;
 }
 
+/* Título "Seguir" */
 #redes h1 {
     color: #caced6;
     cursor: pointer;
@@ -91,16 +99,19 @@
     color: #000000;
 }
 
+/* ===== RESPONSIVE: pantallas mayores a 1024px (Desktop) ===== */
 @media screen and (min-width:1024px) {
 
+    /* Fondo: cubre toda la pantalla y centra la imagen */
     #fondo {
-        background-position: center;
-        background-size: cover;
+        background-position: center; 
+        background-size: cover; /* La imagen cubre todo el espacio */
         height: 100vh;
         width: 100%;
         padding-top: 5%;
     }
 
+    /* Logo más grande en desktop */
     #img1 {
         height: 20vh;
         width: 100%;
@@ -112,6 +123,7 @@
         width: 130vh;
     }
 
+    /* Lista principal: fondo transparente para mostrar imagen de fondo */
     #lista1 {
         display: flex;
         flex-direction: column;
@@ -120,7 +132,7 @@
         justify-content: center;
         height: 45vh;
         width: 100%;
-        background: transparent;
+        background: transparent; /* Sin fondo negro, se ve la imagen */
     }
 
     #lista1 li {
@@ -129,10 +141,12 @@
         margin-right: 25px;
     }
 
+    /* Barra secundaria: visible en desktop */
     #posicion {
         display: block;
     }
 
+      /* Lista de títulos destacados: barra blanca horizontal flotante */
     #lista2 {
         display: flex;
         margin-left: 5%;
@@ -141,7 +155,7 @@
         justify-content: center;
         width: 130vh;
         height: 12vh;
-        position: absolute;
+        position: absolute; /* Flota sobre el contenido */
         top: 105vh;
         font-weight: bold;
         cursor: pointer;

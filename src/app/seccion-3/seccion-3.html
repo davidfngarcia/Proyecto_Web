@@ -1,8 +1,14 @@
 <section class="bg-[#000000] lg:mt-96 mt-20 text-blue-800">
+
+  <!-- Título de la sección -->
   <h1 class="text-white text-4xl font-bold text-center pt-5">Brawlers</h1>
 
   <!-- Menú de rarezas -->
+  <!-- Botones generados dinámicamente desde la API -->
   <div class="flex flex-wrap justify-center gap-3 py-5 px-5">
+
+    <!-- *ngFor genera un botón por cada rareza única -->
+    <!-- El color del borde y texto se toma dinámicamente de la API -->
     <button
       *ngFor="let rareza of getRarezas()"
       (click)="seleccionarRareza(rareza)"
@@ -11,17 +17,23 @@
       [class]="rarezaSeleccionada === rareza ? 
         'border-2 px-4 py-2 rounded-full font-bold bg-white/20 transition duration-300' : 
         'border-2 px-4 py-2 rounded-full font-bold bg-transparent transition duration-300'">
-      {{ rareza }}
+      {{ rareza }} <!-- Nombre de la rareza -->
     </button>
   </div>
 
   <!-- Grid de brawlers -->
+  <!-- Responsive: 2 cols móvil, 3 cols tablet, 4 cols desktop -->
   <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 place-items-center pt-5 mx-5 gap-5">
+
+    <!-- *ngFor genera una tarjeta por cada brawler filtrado -->
     <div
       *ngFor="let seleccion of getBrawlersFiltrados()"
       class="flex flex-col items-center overflow-hidden shadow-xl hover:scale-105 transition duration-75 mx-5">
+       <!-- Imagen del brawler (src y alt dinámicos desde la API) -->
       <img [src]="seleccion.imageUrl" [alt]="seleccion.name" class="w-full">
+      <!-- Nombre del brawler -->
       <p class="text-white font-bold text-center">{{ seleccion.name }}</p>
+      <!-- Descripción del brawler -->
       <p class="text-white font-bold text-center">{{ seleccion.description }}</p>
     </div>
   </div>

@@ -5,12 +5,14 @@
 }
 
 
+/* Contenedor principal: columna invertida en móvil
+   (imagen arriba, texto abajo) */
 #contenedor1{
     display: flex;
     flex-direction: column-reverse;
 }
 
-
+/* Panel izquierdo: fondo negro con corte diagonal inferior derecho */
 #izquierda{
     background: #000000;
     display: flex;
@@ -19,7 +21,7 @@
     padding: 30px;
 }
 
-
+/* Lista de contenido: columna flex con texto blanco */
 #lista{
     color: #fff;
     display: flex;
@@ -27,13 +29,13 @@
     gap: 10px;
 }
 
-
+/* Botón CTA: rojo, inclinado y con transición suave */
 #btn1 {
     background-color: #CA2020;
     width: 60%;
     height: 40px;
-    transform: skewX(-12deg);
-    transition: transform 0.3s ease, background-color 0.3s ease;
+    transform: skewX(-12deg); /* Inclinación decorativa */ 
+    transition: transform 0.3s ease, background-color 0.3s ease; /* Animación de inclinación */ /* Animación de color */
 }
 
 #btn1:hover {
@@ -57,11 +59,12 @@
     font-size: 1.2rem;
 }
 
+/* Tarjetas extra del carrusel: ocultas en móvil */
 .card{
     display: none;
 }
 
-
+/* Imágenes del carrusel en móvil */
 #carrusel img {
     width: 70%;
     display: block;
@@ -72,6 +75,7 @@
     text-align: center;
 }
 
+/* Carrusel en móvil: fila flex con margen superior */
 #carrusel {
     font-weight: 500;
     display: flex;
@@ -82,7 +86,12 @@
     color: #E62429;
 }
 
+
+/* ===== RESPONSIVE: pantallas mayores a 1024px (Desktop) ===== */
 @media screen and (min-width:1024px) {
+
+    /* Sección principal: margen para no quedar bajo el navbar,
+    position relative para anclar el carrusel flotante */
     #seccion-principal {
         margin-top: 115px;
         position: relative;
@@ -91,26 +100,30 @@
         margin-bottom: 120px;
     }
 
+
+     /* Contenedor: fila horizontal, altura fija, recorta el desborde */
     #contenedor1 {
         display: flex;
         width: 100%;
         height: 500px;
-        overflow: hidden;
-        flex-direction: row;
+        overflow: hidden; /* Recorta lo que sobresale */
+        flex-direction: row; /* Paneles lado a lado */
     }
 
+    /* Panel izquierdo: ocupa un poco más de espacio que el derecho,
+     con corte diagonal lateral y encima de la imagen (z-index: 2) */
     #izquierda {
         flex: 1.1;
         background: #000000;
-        clip-path: polygon(0 0, 85% 0, 100% 100%, 0 100%);
+        clip-path: polygon(0 0, 85% 0, 100% 100%, 0 100%); /* Diagonal lateral */
         display: flex;
         align-items: center;
         padding: 60px;
-        margin-right: -10%;
-        z-index: 2;
+        margin-right: -10%; /* Solapa levemente la imagen */
+        z-index: 2; /* Encima del panel derecho */
     }
 
-
+    /* Lista con mayor separación en desktop */
     #lista {
         color: #fff;
         display: flex;
@@ -129,6 +142,7 @@
         font-weight: 700;
     }
 
+    /* Botón: más pequeño en desktop */
     #btn1 {
         background-color: #CA2020;
         width: 40%;
@@ -143,36 +157,40 @@
         transform: skewX(-15deg) scale(1.05);
     }
 
+    /* Panel derecho: debajo del izquierdo (z-index: 1) */
     #derecha {
         height: 100%;
         flex: 0.9;
         z-index: 1;
     }
 
+    /* Imagen del panel derecho: cubre todo sin deformarse */
     #derecha img {
         width: 100%;
         height: 100%;
-        object-fit: cover;
-        object-position: center;
+        object-fit: cover; /* Recorta para llenar el espacio */
+        object-position: center; /* Centra el recorte */
     }
 
+    /* Carrusel flotante: se posiciona encima de ambos paneles */
     #carrusel {
         position: absolute;
-        top: 70%;
-        left: 50%;
-        transform: translateX(-50%);
+        top: 70%; /* Flota al 70% del alto de la sección */
+        left: 50%;  /* Parte desde el centro */
+        transform: translateX(-50%); /* Se centra horizontalmente */
         width: 90%;
         padding: 20px;
         display: flex;
         gap: 15px;
         justify-content: space-between;
-        z-index: 3;
+        z-index: 3; /* Encima de todo */
         background: #fff;
     }
 
+    /* Imágenes del carrusel en desktop: ancho completo de su tarjeta */
     #carrusel img {
         width: 100%;
-        height: auto;
+        height: auto;  /* Mantiene la proporción original */
         display: block;
     }
 
@@ -184,6 +202,7 @@
         color: #E62429;
     }
 
+    /* Tarjetas extra: visibles en desktop */
     .card{
         display: block;
     }

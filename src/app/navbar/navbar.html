@@ -1,9 +1,12 @@
 <header>
     <nav>
+        <!-- Logo de Marvel -->
         <h1>
             <img src="/Menú/Marvel_Logo.svg" alt="logotipo">
         </h1>
 
+        <!-- Lista de enlaces de navegación -->
+        <!-- [ngClass] agrega la clase 'show' cuando menuAbierto es true -->
         <ul class="nav-links" id="nav-links" [ngClass]="{'show' : menuAbierto}"> 
             <li><a href="#">New</a></li>
             <li><a href="#">Comics</a></li>
@@ -13,9 +16,12 @@
             <li><a href="#">TV Shows</a></li>
             <li><a href="#">Videos</a></li>
             <li><a href="#">More</a></li>
+        <!-- Botón de registro -->
             <li><a href="#"><button id="btn">Register Now</button></a></li>
         </ul>
 
+        <!-- Ícono hamburguesa para móvil -->
+        <!-- (click) llama a toggleMenu() para abrir/cerrar el menú -->
         <div class="hamburguer" id="hamburguer" (click)="toggleMenu()">
             <span class="bar"></span>
             <span class="bar"></span>
